@@ -13,12 +13,8 @@ function createGrid(val) {
       cell.classList.add("cell");
 
       cell.addEventListener("mouseenter", () => {
-        cell.style.backgroundColor = "purple";
+        cell.style.backgroundColor = generateRandomRgbColor();
       });
-
-    //   cell.addEventListener("mouseleave", () => {
-    //     cell.style.backgroundColor = "white";
-    //   });
 
       row.appendChild(cell);
     }
@@ -36,5 +32,16 @@ button.addEventListener("click", () => {
     createGrid(val1);
   }
 });
+
+
+function generateRandomRgbColor() {
+  // Generate random values for Red, Green, and Blue (0-255)
+  let r = Math.floor(Math.random() * 256); 
+  let g = Math.floor(Math.random() * 256); 
+  let b = Math.floor(Math.random() * 256); 
+  
+  // Concatenate the values into an RGB color string
+  return "rgb(" + r + "," + g + "," + b + ")";
+}
 
 createGrid(16);
