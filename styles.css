@@ -1,13 +1,17 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-content: stretch; */
+    height: 100vh
 }
 
 .flexcontainer {
+    flex: 1;
     justify-content: space-evenly;
     display: flex;
-    /* flex-direction: row; */
-
 }
 
+body {
+    height: 100vh;
+    width: 100vw;
+}

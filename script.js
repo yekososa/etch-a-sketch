@@ -5,9 +5,19 @@ for (let i = 0; i < 16; i++) {
     row.classList.add("flexcontainer")
 
     for (let j = 0; j < 16; j++) {
-        let col = document.createElement("div");
-        col.textContent = "cell";
-        row.appendChild(col);
+        let cell = document.createElement("div");
+        cell.textContent = "cell";
+
+        cell.addEventListener("mouseenter", () => {
+            cell.style.backgroundColor = "red";
+        })
+
+        cell.addEventListener("mouseleave", () => {
+            cell.style.backgroundColor = "purple";
+        })
+
+        row.appendChild(cell);
     }
     container.appendChild(row);
 }
+
