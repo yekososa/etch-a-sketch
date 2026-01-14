@@ -23,6 +23,8 @@ button {
 }
 
 .cell {
+    background-color: black;
+    opacity: 0;
     flex: 1;
     height: 10px;
     width: 10px;

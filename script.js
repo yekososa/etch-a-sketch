@@ -35,12 +35,10 @@ button.addEventListener("click", () => {
 
 
 function generateRandomRgbColor() {
-  // Generate random values for Red, Green, and Blue (0-255)
   let r = Math.floor(Math.random() * 256); 
   let g = Math.floor(Math.random() * 256); 
   let b = Math.floor(Math.random() * 256); 
   
-  // Concatenate the values into an RGB color string
   return "rgb(" + r + "," + g + "," + b + ")";
 }
 
