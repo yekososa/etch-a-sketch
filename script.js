@@ -2,6 +2,8 @@ let screen = document.querySelector(".screen");
 let currentSize = 100;
 
 function createGrid(val) {
+  if (val === null) return;
+
   currentSize = val;
   screen.replaceChildren();
   let percentage = 100/val + '%';
@@ -26,12 +28,14 @@ createGrid(currentSize);
 const reset = document.querySelector('#reset');
 reset.addEventListener('click',  () => createGrid(currentSize));
 
-
 const change = document.querySelector('#change');
 change.addEventListener('click', ()=> {
   while(true) {
     let newGridSize = prompt("Enter new grid size (max 100)");
-    if (isNaN(newGridSize)) continue;
+    if (isNaN(newGridSize)) {
+      alert('Only numbers are valid inputs');
+      continue;
+    }
     if (newGridSize > 100) {
       alert('Hey! Max 100!');
       continue
