@@ -13,7 +13,8 @@ function createGrid(val) {
       cell.classList.add("cell");
 
       cell.addEventListener("mouseenter", () => {
-        cell.style.backgroundColor = generateRandomRgbColor();
+        let opacity = cell.style.opacity;
+        cell.style.opacity = Math.min(1, Number(opacity) + 0.1);
       });
 
       row.appendChild(cell);
