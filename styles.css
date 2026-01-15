@@ -1,49 +1,22 @@
-/* .container {
-    display: flex;
-    flex-direction: column;
-    /* align-content: stretch; 
-    height: 100vh
-}
-
-.flexcontainer {
-    flex: 1;
-    justify-content: space-evenly;
-    display: flex;
-    /* align-content: stretch; 
-}
-
-body {
-    height: 100vh;
-    width: 100vw;
-}
-
-button {
-    display: block;
-    margin: 0 auto;
-}
-
-.cell {
-    background-color: black;
-    opacity: 0;
-    flex: 1;
-    height: 10px;
-    width: 10px;
-} */
 
 .newContainer {
     text-align: center;
     height: 100vh;
     width: 100vw;
     font-size: 36px;
-    color: white;
+    color: #cfb53b;
     background-color: red;
     padding: 0;
     margin: 0;
     border-radius: 15px;
+    text-shadow: 
+    0 0 10px #0fa, 
+    0 0 20px #0fa, 
+    0 0 30px #0fa, 
+    0 0 40px #0fa;
 }
 
 .cell {
-    /* border: 2px black solid; */
     opacity: 0;
     background-color: black;
 }
@@ -56,8 +29,6 @@ button {
 }
 
 #btnControl button {
-    /* flex-grow: 1; */
-    /* flex-shrink: 1; */
     width: 100px;
     height: 20px;
 }
@@ -66,8 +37,6 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    /* align-content: stretch; */
-    /* column-gap: 0px; */
     border-radius: 15px;
     margin: 0 auto;
     height: 80vh;
@@ -81,6 +50,7 @@ button {
 }
 
 .scrolls {
+    pointer-events: none;
     border-radius: 50%;
     width: 100px;
     height: 100px;
