@@ -1,56 +1,10 @@
-// const container = document.querySelector(".container");
-
-// function createGrid(val) {
-//   const container = document.querySelector(".container");
-//   container.replaceChildren();
-
-//   for (let i = 0; i < val; i++) {
-//     let row = document.createElement("div");
-//     row.classList.add("flexcontainer");
-
-//     for (let j = 0; j < val; j++) {
-//       let cell = document.createElement("div");
-//       cell.classList.add("cell");
-
-//       cell.addEventListener("mouseenter", () => {
-//         let opacity = cell.style.opacity;
-//         cell.style.opacity = Math.min(1, Number(opacity) + 0.1);
-//       });
-
-//       row.appendChild(cell);
-//     }
-//     container.appendChild(row);
-//   }
-// }
-// const button = document.querySelector("button");
-
-// button.addEventListener("click", () => {
-//   const val1 = prompt("Enter number of squares per side for new grid");
-
-//   if (val1 > 100) {
-//     alert("Entered value must be less than or equal to 100");
-//   } else {
-//     createGrid(val1);
-//   }
-// });
-
-
-// function generateRandomRgbColor() {
-//   let r = Math.floor(Math.random() * 256); 
-//   let g = Math.floor(Math.random() * 256); 
-//   let b = Math.floor(Math.random() * 256); 
-  
-//   return "rgb(" + r + "," + g + "," + b + ")";
-// }
-
-// createGrid(16);
-
-
 let screen = document.querySelector(".screen");
+let currentSize = 100;
 
 function createGrid(val) {
+  currentSize = val;
   screen.replaceChildren();
-  let percentage = 100/16 + '%';
+  let percentage = 100/val + '%';
 
   for (let i = 0; i < val*val; i++) {
       let cell = document.createElement("div");
@@ -67,5 +21,23 @@ function createGrid(val) {
       screen.appendChild(cell);
     }
 }
+createGrid(currentSize);
 
-createGrid(69);
+const reset = document.querySelector('#reset');
+reset.addEventListener('click',  () => createGrid(currentSize));
+
+
+const change = document.querySelector('#change');
+change.addEventListener('click', ()=> {
+  while(true) {
+    let newGridSize = prompt("Enter new grid size (max 100)");
+    if (isNaN(newGridSize)) continue;
+    if (newGridSize > 100) {
+      alert('Hey! Max 100!');
+      continue
+    }
+
+    createGrid(newGridSize);
+    return;
+  }
+});
